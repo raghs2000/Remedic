@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Remedic</title>
+	{% load static %}
+	<link rel='stylesheet' href="{% static 'main.css' %}">
+</head>
+
+<body>
+	
+	{% block content %}
+		<div class="container">
+			{% for disease in diseases %}
+			<div class="card">
+				<h2>{{ disease.name }}</h2>
+				 <span>{{ disease.classification }}</span>
+				 <ul>
+				 	<li>Causes: <span>{{ disease.causes }}</span></li>
+				 	<li>Preventions: <span>{{ disease.prevention }}</span></li>
+				 	<li>Treatments: <span>{{ disease.treatment }}</span></li>
+				</ul>
+				<br>
+				<a href="{% url 'delete' diseaseName=disease.name %}" onclick="return confirm('Are you sure you want to delete this Disease Data?');">Delete</a>
+			</div>
+			{% endfor %}
+		</div>
+	{% endblock %}
+	
+</body>
+</html>

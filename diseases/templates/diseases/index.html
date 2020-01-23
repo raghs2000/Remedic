@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Remedic</title>
+	{% load static %}
+	<link rel='stylesheet' href="{% static 'main.css' %}">
+</head>
+
+<body>
+	
+	<form>
+		<select name="diseases" id="diseases">
+		  	{% for disease in diseases %}
+				<option value="{{ disease.name }}">{{ disease.name }}</option>
+			{% endfor %}
+		</select>
+		<input type="submit" name="submit" id="submit">
+	</form>
+	
+</body>
+</html>

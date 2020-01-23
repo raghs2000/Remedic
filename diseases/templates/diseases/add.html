@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Remedic</title>
+	{% load static %}
+	<link rel='stylesheet' href="{% static 'main.css' %}">
+</head>
+
+<body>
+	
+	{% block content %}
+		<form method="POST" class="addEvent">
+	    	{% csrf_token %}
+	        {{ form.as_p }}
+	        <button type="submit">Add Disease</button>
+		</form>
+	{% endblock %}
+	
+</body>
+</html>
