@@ -7,15 +7,19 @@
 </head>
 
 <body>
-	
-	<form>
-		<select name="diseases" id="diseases">
-		  	{% for disease in diseases %}
-				<option value="{{ disease.name }}">{{ disease.name }}</option>
-			{% endfor %}
-		</select>
-		<input type="submit" name="submit" id="submit">
-	</form>
-	
+		
+	<div class="container">
+
+		{% block content %}
+		<form method="POST" class="card">
+			<h1>Welcome, Raghav</h1>
+	    	{% csrf_token %}
+	        {{ form.as_p }}
+	        <button type="submit">Submit</button>
+		</form>
+	{% endblock %}
+		
+	</div>
+
 </body>
 </html>

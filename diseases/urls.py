@@ -8,4 +8,5 @@ urlpatterns = [
     path('add', views.addNewDisease, name='add'),
     path('view', views.viewDiseases, name='view'),
     path('delete/<str:diseaseName>/', views.deleteDisease, name='delete'),
+    path('disease/<str:diseaseName>', views.scan2, name='disease'),
 ]

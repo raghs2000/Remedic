@@ -15,3 +15,17 @@ class Disease(models.Model):
 	
 	def __str__(self):
 		return self.name
+
+
+class Patient(models.Model):
+	
+	name = models.CharField(max_length=50)
+	blood_group = models.CharField(max_length=50)
+	age = models.CharField(max_length=50)
+	allergy = models.CharField(max_length=50)
+	height = models.CharField(max_length=50)
+	preExisting = models.CharField(max_length=50)
+	history = models.CharField(max_length=50, default='Cancer')
+	
+	def __str__(self):
+		return self.name
