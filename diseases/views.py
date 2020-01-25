@@ -15,7 +15,7 @@ preExistings = ['None', 'AIDS', 'Down','Turner']
 # Create your views here.
 def index(request):
 	diseases = Disease.objects.all();
-	return render(request, 'diseases/index.html',)
+	return render(request, 'diseases/index.html', {'diseases': diseases,},)
 
 def addNewDisease(request):
     if request.method == "POST":
